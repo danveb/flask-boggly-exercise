@@ -3,7 +3,11 @@
 {% block content %}
 <h1>{{user.first_name}} {{user.last_name}} Details</h1>
 <!-- <img src="{{user.img_url}}" alt=""> -->
-<button><a href="/users/{{user.id}}/edit">Edit</a></button>
-<button><a href="/users/{{user.id}}/delete">Delete</a></button>
+<form>
+    <!-- <button><a href="/users/{{user.id}}/edit">Edit</a></button> -->
+    <button formaction="/users/{{user.id}}/edit">Edit</button>
+    <button formaction="/users/{{user.id}}/delete" formmethod="POST">Delete</button>
+</form>
+
 
 {% endblock %}
