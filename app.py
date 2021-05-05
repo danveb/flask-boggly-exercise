@@ -41,7 +41,7 @@ def new_user():
     image_url = request.form['image_url']
 
     # create new instance 
-    new_user = User(first_name=first_name, last_name=last_name, image_url=image_url)
+    new_user = User(first_name=first_name, last_name=last_name, image_url=image_url or None)
     # add/commit to database
     db.session.add(new_user)
     db.session.commit()
